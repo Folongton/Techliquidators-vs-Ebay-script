@@ -7,7 +7,7 @@ endpoint = 'https://svcs.ebay.com/services/search/FindingService/v1' \
            '?OPERATION-NAME=findCompletedItems' \
            '&SERVICE-VERSION=1.0.0' \
            '&RESPONSE-DATA-FORMAT=JSON' \
-           '&callback=_cb_findItemsByKeywords' \
+           '&callback=_cb_findItemsByKeywords' \              # Couldn't find, what is it ???
            '&REST-PAYLOAD' \
            '&paginationInput.entriesPerPage=100' \
            '&GLOBAL-ID=EBAY-US&siteid=0' \
