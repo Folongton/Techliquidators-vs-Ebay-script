@@ -66,7 +66,7 @@ if __name__ == '__main__':                   # basically asks 'Is this file is b
     for itemID in new_items:
         if not os.path.exists(f'{directory}/{itemID}.xlsx'):
             r = requests.post(download_url, {'auctionID': itemID})  # How did you figure out we can make post with data as :{'auctionID': itemID} ???
-            save_file(itemID, r.content)
+            save_file(itemID, r.content)                           # r.content - content of response in bytes
 
     for file in os.listdir(directory):
         wb = Workbook()

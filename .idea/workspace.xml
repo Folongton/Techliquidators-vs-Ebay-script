@@ -3,13 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="96854bac-39e4-4fd0-b307-3224186899c4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache.db.bak" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache.db.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache.db.dir" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/consts.py" beforeDir="false" afterPath="$PROJECT_DIR$/consts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ebay.py" beforeDir="false" afterPath="$PROJECT_DIR$/ebay.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/2059297.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/2059305.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,23 +16,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="66" column="37" selection-start-line="66" selection-start-column="37" selection-end-line="66" selection-end-column="37" />
+            <state relative-caret-position="116">
+              <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
               <folding>
                 <element signature="e#1067#1396#0" />
+                <element signature="e#1560#2586#0" />
+                <element signature="e#2623#2906#0" />
+                <element signature="e#3647#3658#0" />
+                <element signature="e#4036#4348#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/consts.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="170" selection-start-line="4" selection-start-column="170" selection-end-line="4" selection-end-column="170" />
+            <state relative-caret-position="92">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
             </state>
           </provider>
         </entry>
@@ -46,8 +44,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ebay.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="62" selection-start-line="9" selection-start-column="62" selection-end-line="9" selection-end-column="62" />
+            <state relative-caret-position="460">
+              <caret line="23" column="52" selection-start-line="23" selection-start-column="52" selection-end-line="23" selection-end-column="52" />
               <folding>
                 <element signature="e#0#52#0" expanded="true" />
               </folding>
@@ -67,7 +65,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="867">
+            <state relative-caret-position="1173">
               <caret line="52" column="44" selection-start-line="52" selection-start-column="44" selection-end-line="52" selection-end-column="44" />
               <folding>
                 <element signature="e#0#27#0" expanded="true" />
@@ -111,24 +109,22 @@
         <option value="$PROJECT_DIR$/test 2.py" />
         <option value="$PROJECT_DIR$/test2.py" />
         <option value="$PROJECT_DIR$/Testing.py" />
-        <option value="$PROJECT_DIR$/main.py" />
-        <option value="$PROJECT_DIR$/ebay.py" />
         <option value="$PROJECT_DIR$/consts.py" />
+        <option value="$PROJECT_DIR$/ebay.py" />
+        <option value="$PROJECT_DIR$/main.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="1" />
-    <option name="width" value="1346" />
-    <option name="height" value="685" />
+    <option name="x" value="676" />
+    <option name="width" value="697" />
+    <option name="height" value="735" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -140,11 +136,12 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Python codes" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -158,7 +155,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.ebay">
+  <component name="RunManager" selected="Python.main">
     <configuration name="Testing" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Techliquidators 0.2" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -245,9 +242,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main" />
         <item itemvalue="Python.Testing" />
         <item itemvalue="Python.test" />
-        <item itemvalue="Python.main" />
         <item itemvalue="Python.ebay" />
         <item itemvalue="Python.ebay" />
       </list>
@@ -264,6 +261,21 @@
       <option name="presentableId" value="Default" />
       <updated>1547412002860</updated>
     </task>
+    <task id="LOCAL-00001" summary="Comments">
+      <created>1548129268676</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1548129268676</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Comments">
+      <created>1548131433236</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1548131433236</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TodoView">
@@ -280,16 +292,16 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" sideWeight="0.5008183" side_tool="true" weight="0.21651785" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.7917526" visible="true" weight="0.22916667" />
-      <window_info id="Structure" order="2" sideWeight="0.20824742" side_tool="true" visible="true" weight="0.19642857" />
+      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.7836812" visible="true" weight="0.15550596" />
+      <window_info id="Structure" order="2" sideWeight="0.21631879" side_tool="true" visible="true" weight="0.15550596" />
       <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.49776787" weight="0.049099836" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5014881" side_tool="true" weight="0.3289689" />
-      <window_info anchor="bottom" id="Python Console" order="2" sideWeight="0.49776787" visible="true" weight="0.30769232" />
+      <window_info active="true" anchor="bottom" id="Python Console" order="2" sideWeight="0.49776787" visible="true" weight="0.0991453" />
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" weight="0.3289689" />
       <window_info anchor="bottom" id="Version Control" order="5" weight="0.3878887" />
-      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.4985119" weight="0.39934534" />
-      <window_info anchor="bottom" id="Debug" order="7" sideWeight="0.49925596" weight="0.20949264" />
+      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.4985119" weight="0.3371522" />
+      <window_info anchor="bottom" id="Debug" order="7" sideWeight="0.49925596" weight="0.48281506" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="10" weight="0.29623568" />
@@ -313,6 +325,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="Comments" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -386,6 +402,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ebay.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="23" column="52" selection-start-line="23" selection-start-column="52" selection-end-line="23" selection-end-column="52" />
+          <folding>
+            <element signature="e#0#52#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/TO DO for version 0.2.2.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -395,7 +421,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lot.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="867">
+        <state relative-caret-position="1173">
           <caret line="52" column="44" selection-start-line="52" selection-start-column="44" selection-end-line="52" selection-end-column="44" />
           <folding>
             <element signature="e#0#27#0" expanded="true" />
@@ -403,30 +429,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ebay.py">
+    <entry file="file://$PROJECT_DIR$/consts.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="62" selection-start-line="9" selection-start-column="62" selection-end-line="9" selection-end-column="62" />
-          <folding>
-            <element signature="e#0#52#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="92">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="66" column="37" selection-start-line="66" selection-start-column="37" selection-end-line="66" selection-end-column="37" />
+        <state relative-caret-position="116">
+          <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
           <folding>
             <element signature="e#1067#1396#0" />
+            <element signature="e#1560#2586#0" />
+            <element signature="e#2623#2906#0" />
+            <element signature="e#3647#3658#0" />
+            <element signature="e#4036#4348#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/consts.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="170" selection-start-line="4" selection-start-column="170" selection-end-line="4" selection-end-column="170" />
         </state>
       </provider>
     </entry>
