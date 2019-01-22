@@ -39,8 +39,8 @@ def get_new_items():                            # Function returns list of colle
 
 
 def save_file(name, content):
-    if not os.path.exists(directory):
-        os.makedirs(directory)
+    if not os.path.exists(directory):           # what if not ??? - False ?
+        os.makedirs(directory)                  # why makedirs, not mkdir ?  Creates directory
     if not os.path.exists(f'{directory}/{name}.xlsx'):
         open(f'{directory}/{name}.xlsx', 'wb').write(content)
 
@@ -65,7 +65,7 @@ if __name__ == '__main__':                   # basically asks 'Is this file is b
 
     for itemID in new_items:
         if not os.path.exists(f'{directory}/{itemID}.xlsx'):
-            r = requests.post(download_url, {'auctionID': itemID})
+            r = requests.post(download_url, {'auctionID': itemID})  # How did you figure out we can make post with data as :{'auctionID': itemID} ???
             save_file(itemID, r.content)
 
     for file in os.listdir(directory):

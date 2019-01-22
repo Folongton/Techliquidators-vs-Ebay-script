@@ -7,7 +7,7 @@ endpoint = 'https://svcs.ebay.com/services/search/FindingService/v1' \
            '?OPERATION-NAME=findCompletedItems' \
            '&SERVICE-VERSION=1.0.0' \
            '&RESPONSE-DATA-FORMAT=JSON' \
-           '&callback=_cb_findItemsByKeywords' \              # Couldn't find, what is it ???
+           '&callback=_cb_findItemsByKeywords' \
            '&REST-PAYLOAD' \
            '&paginationInput.entriesPerPage=100' \
            '&GLOBAL-ID=EBAY-US&siteid=0' \
@@ -24,7 +24,7 @@ class Ebay:
         if keyword and keyword != '' and page <= 100:   # what is keyword is true and keyword != ??? # If keyword means keyword is not None and  keyword!=''   Runs until keyword comes from Excel file, when hits '' it stops
             keyword = keyword.replace('&quot;', '')
             keyword = keyword.replace('&', ' ')
-            print(f'API Request Keyword {keyword}, Page fatching: {page}')
+            print(f'API Request Keyword: {keyword}, Page fetching: {page}')
             response = requests.get(
                 f'{endpoint}&SECURITY-APPNAME={self.apikey}&keywords={keyword}&paginationInput.pageNumber={page}')   # why self.apikey , not apikey ???
             return self.parse(response.text, page)                # what is Parsing -> https://www.quora.com/What-does-parsing-in-programming-mean
