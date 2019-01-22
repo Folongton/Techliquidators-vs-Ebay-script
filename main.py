@@ -10,7 +10,7 @@ from helper import avg, median  # From file helper import Functions median and a
 from bs4 import BeautifulSoup   # Beautiful Soup is a Python library for pulling data out of HTML and XML files (why bs4 not BeautifulSoup?) Need more info on it.
 
 
-auction_names = {} # ? Asigning variable with null  ?? why {} ?
+auction_names = {} # Assigning Empty global variable as dictionary
 
 
 def get_existed_items(db):
@@ -19,22 +19,23 @@ def get_existed_items(db):
         items.append(int(item[0]))
     return items
     '''
-   return [int(item[0]) for item in db.get('items', 'id')] # finction returns 1st item in db
+   return [int(item[0]) for item in db.get('items', 'id')]   # function returns all items in DB. List . Refactoring (avoiding for loops) https://medium.com/python-pandemonium/never-write-for-loops-again-91a5a4c84baf
 
 
-def get_new_items():
-    html = requests.get(cat_url).text
-    soup = BeautifulSoup(html, 'html.parser')
-    items = []
+def get_new_items():                            # Function returns list of collected Auction ID's into items and adds ID:Title into auction_names dictionary
+    html = requests.get(cat_url).text           # why .text ? -> It automatically decodes returned data to text format or it returns only TEXT part of request ???
+    soup = BeautifulSoup(html, 'html.parser')   # standart soup object  https://www.youtube.com/watch?v=aIPqt-OdmS0
+    items = []                                  # creates empty list
     losts = soup.find_all('div', class_='truncate-ellipsis')
     for lot in losts:
-        name = lot.span.a.text
-        item = re.search('marketplace_main\.auction&amp;id=(\d+)"', str(lot)) # Auction number from link via RE
-        if item:
-            item = int(item.group(1))
-            auction_names.update({item: name})
+        name = lot.span.a.text                   # ???
+        item = re.search('marketplace_main\.auction&amp;id=(\d+)"', str(lot)) # Auction number from link via RE https://regex101.com/
+        if item:                                 #if item is True ???
+            item = int(item.group(1))            # RE function  https://docs.python.org/2/library/re.html
+            auction_names.update({item: name})   # how did we get name ?
+            print(auction_names)                 # temporary print
             items.append(item)
-    return list(set(items))
+    return list(set(items))                      # set function
 
 
 def save_file(name, content):
@@ -44,22 +45,23 @@ def save_file(name, content):
         open(f'{directory}/{name}.xlsx', 'wb').write(content)
 
 
-if __name__ == '__main__':
-    db = Database('techliquidators.sqlite')
+if __name__ == '__main__':                   # basically asks 'Is this file is being run directly from Python or it is being imported?' if yes... SO, if for any reason we will run this project from other file(module) this 'if' block will not execute. ----
+                                             #https: // www.youtube.com / watch?v = sugvnHA7ElY & vl = en
+    db = Database('techliquidators.sqlite')  # Create object db  - as in Database class def__init__
 
     existed_items = get_existed_items(db)
     new_items = get_new_items()
-    new_items = [item for item in new_items if item not in existed_items]
+    new_items = [item for item in new_items if item not in existed_items]   # List. Refactoring (avoiding for loops) https://medium.com/python-pandemonium/never-write-for-loops-again-91a5a4c84baf
 
     # temp = []
     # for item in new_items:
     #     if item not in existed_items:
     #         temp.append(item)
 
-    db.insert_many('items', new_items)
+    db.insert_many('items', new_items)      # Function from Database Class: inserts list of new auctions IDs into DB
     db.close()
 
-    ebay = Ebay('DDrozd-sometest-PRD-539377a7b-a843e6ef')
+    ebay = Ebay('VasylZhe-TechPric-PRD-2393f3dea-5cde0afe')     # Ebay class object as in __init__ Ebay
 
     for itemID in new_items:
         if not os.path.exists(f'{directory}/{itemID}.xlsx'):
@@ -101,10 +103,10 @@ if __name__ == '__main__':
         index = ws.max_row + 1
         ws[f'L{index}'] = sum([avg(l.listingsByTitle) for l in lots])
         ws[f'M{index}'] = sum([median(l.listingsByTitle) for l in lots])
-        ws[f'O{index}'] = sum([avg(l.listingsByMFG) for l in lots])
-        ws[f'P{index}'] = sum([median(l.listingsByMFG) for l in lots])
-        ws[f'R{index}'] = sum([avg(l.listingsByUPC) for l in lots])
-        ws[f'S{index}'] = sum([median(l.listingsByUPC) for l in lots])
+        ws[f'O{index}'] = sum([avg(l.listingsByUPC) for l in lots])
+        ws[f'P{index}'] = sum([median(l.listingsByUPC) for l in lots])
+        ws[f'R{index}'] = sum([avg(l.listingsByMFG) for l in lots])
+        ws[f'S{index}'] = sum([median(l.listingsByMFG) for l in lots])
         # os.remove(f'{directory}/{file}')
         print('save file')
         wb.save(f'{directory}/{file}')
