@@ -1,11 +1,11 @@
-from consts import cache_db
-import shelve  # DB for Cash
+from consts import cache_db      # imports variable cache_db from file consts
+import shelve                    # DB for Cache
 
 
 class Lot:
     def __init__(self, AuctionID=None, LotID=None, ReferenceID=None, MFGName=None, MFGPartNumber=None, Title=None,
                  BBYSKU=None, UPC=None, EstimatedMSRP=None, List=None):
-        if List:
+        if List:                           # if List is true or given assign values from List
             self.AuctionID = List[0]
             self.LotID = List[1]
             self.ReferenceID = List[2]
@@ -15,7 +15,7 @@ class Lot:
             self.BBYSKU = List[6]
             self.UPC = List[7]
             self.EstimatedMSRP = List[8]
-        else:
+        else:                             # otherwise assign this values
             self.AuctionID = AuctionID
             self.LotID = LotID
             self.ReferenceID = ReferenceID
@@ -25,9 +25,9 @@ class Lot:
             self.BBYSKU = BBYSKU
             self.UPC = UPC
             self.EstimatedMSRP = EstimatedMSRP
-        self.listingsByTitle = []
-        self.listingsByMFG = []
-        self.listingsByUPC = []
+        self.listingsByTitle = []         # creates empty list
+        self.listingsByMFG = []           # creates empty list
+        self.listingsByUPC = []           # creates empty list
 
     def fill_listings_by_Title(self, ebay):
         self.fill_listings(ebay, self.Title, self.listingsByTitle)
@@ -46,7 +46,7 @@ class Lot:
                 print(cached)
                 obj.extend(cached)
             else:
-                print('search')
+                print('searching')
                 page = 1
                 has_pages = True
                 while has_pages:
@@ -58,4 +58,4 @@ class Lot:
                     storage[param] = obj
 
     def __str__(self):
-        return ' | '.join([f'{a}={getattr(self, a)}' for a in dir(self) if not a.startswith('__')])
+        return ' | '.join([f'{a}={getattr(self, a)}' for a in dir(self) if not a.startswith('__')])   # FOR DEBUGGING . when print object of Lot class it'll return variables not just a name.

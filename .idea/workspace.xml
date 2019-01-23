@@ -3,7 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="96854bac-39e4-4fd0-b307-3224186899c4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/database.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ebay.py" beforeDir="false" afterPath="$PROJECT_DIR$/ebay.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lot.py" beforeDir="false" afterPath="$PROJECT_DIR$/lot.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/techliquidators.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/techliquidators.sqlite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,16 +21,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="116">
-              <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
+            <state relative-caret-position="-1468">
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
               <folding>
-                <element signature="e#1067#1396#0" />
-                <element signature="e#1560#2586#0" />
-                <element signature="e#2623#2906#0" />
-                <element signature="e#3647#3658#0" />
                 <element signature="e#4036#4348#0" />
               </folding>
             </state>
@@ -35,8 +36,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/consts.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="4" selection-start-line="4" selection-end-line="4" />
+            <state relative-caret-position="138">
+              <caret line="6" selection-start-line="6" selection-end-line="6" />
             </state>
           </provider>
         </entry>
@@ -44,8 +45,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ebay.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="23" column="52" selection-start-line="23" selection-start-column="52" selection-end-line="23" selection-end-column="52" />
+            <state relative-caret-position="1150">
+              <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
               <folding>
                 <element signature="e#0#52#0" expanded="true" />
               </folding>
@@ -53,24 +54,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TO DO for version 0.2.2.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="49" selection-start-column="49" selection-end-column="49" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1173">
-              <caret line="52" column="44" selection-start-line="52" selection-start-column="44" selection-end-line="52" selection-end-column="44" />
-              <folding>
-                <element signature="e#0#27#0" expanded="true" />
-              </folding>
-            </state>
+            <state relative-caret-position="-138" />
           </provider>
         </entry>
       </file>
@@ -87,6 +74,8 @@
     <findStrings>
       <find>tech</find>
       <find>get</find>
+      <find>find</find>
+      <find>findcomp</find>
       <find>print</find>
     </findStrings>
   </component>
@@ -97,21 +86,34 @@
         <entry key="$PROJECT_DIR$" value="My_tests" />
       </map>
     </option>
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="API_update" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/lot.py" />
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/helper.py" />
         <option value="$PROJECT_DIR$/TO DO for version 0.2.2.txt" />
-        <option value="$PROJECT_DIR$/database.py" />
+        <option value="$PROJECT_DIR$/consts.py" />
         <option value="$PROJECT_DIR$/test 2.py" />
         <option value="$PROJECT_DIR$/test2.py" />
         <option value="$PROJECT_DIR$/Testing.py" />
-        <option value="$PROJECT_DIR$/consts.py" />
+        <option value="$PROJECT_DIR$/database.py" />
         <option value="$PROJECT_DIR$/ebay.py" />
         <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/lot.py" />
       </list>
     </option>
   </component>
@@ -132,6 +134,11 @@
               <item name="Techliquidators script" type="b2602c69:ProjectViewProjectNode" />
               <item name="Techliquidators script" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Techliquidators script" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Techliquidators script" type="462c0819:PsiDirectoryNode" />
+              <item name="files" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -140,8 +147,8 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Python codes" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -246,7 +253,7 @@
         <item itemvalue="Python.Testing" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.ebay" />
-        <item itemvalue="Python.ebay" />
+        <item itemvalue="Python.Testing" />
       </list>
     </recent_temporary>
   </component>
@@ -261,21 +268,14 @@
       <option name="presentableId" value="Default" />
       <updated>1547412002860</updated>
     </task>
-    <task id="LOCAL-00001" summary="Comments">
-      <created>1548129268676</created>
+    <task id="LOCAL-00001" summary="Comments and line alligning">
+      <created>1548118403410</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1548129268676</updated>
+      <updated>1548118403410</updated>
     </task>
-    <task id="LOCAL-00002" summary="Comments">
-      <created>1548131433236</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1548131433236</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TodoView">
@@ -292,25 +292,60 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" sideWeight="0.5008183" side_tool="true" weight="0.21651785" />
-      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.7836812" visible="true" weight="0.15550596" />
-      <window_info id="Structure" order="2" sideWeight="0.21631879" side_tool="true" visible="true" weight="0.15550596" />
-      <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.49776787" weight="0.049099836" />
-      <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5014881" side_tool="true" weight="0.3289689" />
-      <window_info active="true" anchor="bottom" id="Python Console" order="2" sideWeight="0.49776787" visible="true" weight="0.0991453" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.78348625" visible="true" weight="0.16145833" />
+      <window_info id="Structure" order="2" sideWeight="0.21691176" side_tool="true" weight="0.16145833" />
+      <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.49776787" weight="0.408547" />
+      <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5014881" side_tool="true" weight="0.3878887" />
+      <window_info anchor="bottom" id="Python Console" order="2" sideWeight="0.49776787" weight="0.26153848" />
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" weight="0.3289689" />
-      <window_info anchor="bottom" id="Version Control" order="5" weight="0.3878887" />
-      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.4985119" weight="0.3371522" />
-      <window_info anchor="bottom" id="Debug" order="7" sideWeight="0.49925596" weight="0.48281506" />
+      <window_info anchor="bottom" id="Version Control" order="5" sideWeight="0.4985119" weight="0.3878887" />
+      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.4985119" visible="true" weight="0.06837607" />
+      <window_info anchor="bottom" id="Debug" order="7" sideWeight="0.49925596" weight="0.20949264" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="10" weight="0.29623568" />
+      <window_info anchor="bottom" id="GitHub Pull Requests" order="11" visible="true" weight="0.29296234" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
   </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="RECENT_FILTERS">
       <map>
         <entry key="Branch">
@@ -327,25 +362,22 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="Comments" />
+    <MESSAGE value="Comments and line alligning" />
+    <option name="LAST_COMMIT_MESSAGE" value="Comments and line alligning" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/test.py</url>
-          <line>2</line>
-          <option name="timeStamp" value="3" />
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>40</line>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/techliquidators.sqlite">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.py" />
+    <entry file="file://$PROJECT_DIR$/techliquidators.sqlite" />
     <entry file="file://$PROJECT_DIR$/helper.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -355,34 +387,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/errors.txt" />
     <entry file="file://$USER_HOME$/Downloads/classes_and_objects.py" />
-    <entry file="file://$PROJECT_DIR$/list of required modules.txt" />
+    <entry file="file://$PROJECT_DIR$/list of required modules.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/3/typing.pyi">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="487" column="8" selection-start-line="487" selection-start-column="8" selection-end-line="487" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/venv/Lib/site-packages/bs4/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="93" column="21" selection-start-line="93" selection-start-column="17" selection-end-line="93" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
-          <folding>
-            <element signature="e#235#668#0" />
-            <element signature="e#812#1345#0" />
-            <element signature="e#1376#1637#0" />
-            <element signature="e#1694#2108#0" />
-            <element signature="e#2159#2632#0" />
-            <element signature="e#2668#2692#0" />
-            <element signature="e#2730#2805#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -402,13 +417,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ebay.py">
+    <entry file="file://$USER_HOME$/venv/Lib/site-packages/openpyxl/cell/cell.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="23" column="52" selection-start-line="23" selection-start-column="52" selection-end-line="23" selection-end-column="52" />
-          <folding>
-            <element signature="e#0#52#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="163">
+          <caret line="282" column="8" selection-start-line="282" selection-start-column="8" selection-end-line="282" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -419,35 +431,60 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lot.py">
+    <entry file="file://$PROJECT_DIR$/Project Requirements.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/venv/Lib/site-packages/bs4/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1173">
-          <caret line="52" column="44" selection-start-line="52" selection-start-column="44" selection-end-line="52" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#27#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-571">
+          <caret line="85" column="27" selection-start-line="85" selection-start-column="27" selection-end-line="85" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="809">
+          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/consts.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        <state relative-caret-position="138">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
+        <state relative-caret-position="-1468">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
           <folding>
-            <element signature="e#1067#1396#0" />
-            <element signature="e#1560#2586#0" />
-            <element signature="e#2623#2906#0" />
-            <element signature="e#3647#3658#0" />
             <element signature="e#4036#4348#0" />
           </folding>
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ebay.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1150">
+          <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
+          <folding>
+            <element signature="e#0#52#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-138" />
       </provider>
     </entry>
   </component>

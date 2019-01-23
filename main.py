@@ -23,19 +23,19 @@ def get_existed_items(db):
 
 
 def get_new_items():                            # Function returns list of collected Auction ID's into items and adds ID:Title into auction_names dictionary
-    html = requests.get(cat_url).text           # why .text ? -> It automatically decodes returned data to text format or it returns only TEXT part of request ???
+    html = requests.get(cat_url).text           # why .text ? -> It automatically decodes returned data to text format or it returns only TEXT part of request ???  - ALL HTML
     soup = BeautifulSoup(html, 'html.parser')   # standart soup object  https://www.youtube.com/watch?v=aIPqt-OdmS0
     items = []                                  # creates empty list
     losts = soup.find_all('div', class_='truncate-ellipsis')
     for lot in losts:
-        name = lot.span.a.text                   # ???
-        item = re.search('marketplace_main\.auction&amp;id=(\d+)"', str(lot)) # Auction number from link via RE https://regex101.com/
+        name = lot.span.a.text                   # lot.span.a.text - takes text from class_='truncate-ellipsis'
+        item = re.search('marketplace_main\.auction&amp;id=(\d+)"', str(lot)) # Auction number from link via RE https://regex101.com/. str(lot) changes object of bs4 lot to str.
         if item:                                 #if item is True ???
             item = int(item.group(1))            # RE function  https://docs.python.org/2/library/re.html
             auction_names.update({item: name})   # how did we get name ?
             print(auction_names)                 # temporary print
             items.append(item)
-    return list(set(items))                      # set function
+    return list(set(items))                      # set type onto -> list
 
 
 def save_file(name, content):
@@ -68,9 +68,9 @@ if __name__ == '__main__':                   # basically asks 'Is this file is b
             r = requests.post(download_url, {'auctionID': itemID})  # How did you figure out we can make post with data as :{'auctionID': itemID} ???
             save_file(itemID, r.content)                           # r.content - content of response in bytes
 
-    for file in os.listdir(directory):
-        wb = Workbook()
-        ws = wb.active
+    for file in os.listdir(directory):    # for loop going over all files in given directory
+        wb = Workbook()                   # creates workbook. standard openpyxl module object. GREAT EXAMPLES HERE: -> https://medium.com/aubergine-solutions/working-with-excel-sheets-in-python-using-openpyxl-4f9fd32de87f
+        ws = wb.active                    # Workbook.active() - makes 1st sheet in WB active
 
         ws.append(
             ['Auction Name', 'Auction ID', 'Lot ID', 'Reference ID', 'MFG Name', 'MFG Part Number', 'Title', 'BBY SKU',
@@ -78,17 +78,17 @@ if __name__ == '__main__':                   # basically asks 'Is this file is b
              'Median  price by name Ebay using high to low sorting', 'N of listings', 'Avg price by UPC Ebay',
              'Median price by UPC Ebay using  hight to low sorting', 'N of listings',
              'AVG price by MFG + Part Number Ebay',
-             'Median price by MFG + Part Number Ebay using hight to low sorting'])
+             'Median price by MFG + Part Number Ebay using hight to low sorting'])    # appends top row for more details here: https://medium.com/aubergine-solutions/working-with-excel-sheets-in-python-using-openpyxl-4f9fd32de87f
 
-        id_ = int(file.replace('.xlsx', ''))
-        lots = []
-        temp_wb = load_workbook(f'{directory}/{file}')
-        temp_ws = temp_wb.active
-        for row in range(2, temp_ws.max_row + 1):
-            values = []
-            for column in range(1, temp_ws.max_column + 1):
-                cell_obj = temp_ws.cell(row=row, column=column)
-                values.append(cell_obj.value)
+        id_ = int(file.replace('.xlsx', ''))                       # to get an Auction ID we Replaces .xlsx with empty and make it integer
+        lots = []                                                  # creates empty list lots
+        temp_wb = load_workbook(f'{directory}/{file}')             # load_workbook opens every file in a given directory
+        temp_ws = temp_wb.active                                   # .active makes 1st WS active
+        for row in range(2, temp_ws.max_row + 1):                  # Iterates thru all rows with data. 2 - because we have 1st row with our columns names appended earlier
+            values = []                                            # creates empty value list
+            for column in range(1, temp_ws.max_column + 1):        # iterates thru all columns with data starting with 1st.
+                cell_obj = temp_ws.cell(row=row, column=column)    # Assigns cell values to Cell_obj
+                values.append(cell_obj.value)                      # Appends values to values list .value function from Openpyxl which gets or set value held in a cell.
             lot = Lot(List=values)
             lot.fill_listings_by_Title(ebay)
             lot.fill_listings_by_MFG(ebay)

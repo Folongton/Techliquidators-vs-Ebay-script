@@ -9,6 +9,7 @@ class Database:
             self.open(name)
 
 
+
     def open(self, name):                          # try/except/finally block see: https://docs.python.org/2.5/whatsnew/pep-341.html
         try:
             self.conn = sqlite3.connect(name)
@@ -18,7 +19,7 @@ class Database:
             self.conn.commit()
         except sqlite3.Error as e:                 #variable 'e' was not used
             print("Error connecting to database!")
-            print("Database error: %s" % e)        # I added this line
+            print("Database error: %s" % e)       # I added this line
         finally:
             self.delete_trash()
 
@@ -32,7 +33,7 @@ class Database:
         query = f"SELECT {columns} from {table};"        # formatted string literals -> https://realpython.com/python-f-strings/#f-strings-a-new-and-improved-way-to-format-strings-in-python
         self.cursor.execute(query)
         rows = self.cursor.fetchall()                    # Takes all rows (auction numbers) which are already ni DB
-        return rows[len(rows) - limit if limit else 0:]  # why do we need limit ?
+        return rows[len(rows) - limit if limit else 0:]  # python list slicing
 
     def insert_many(self, table, items):
         if items:                                                        # for all items
