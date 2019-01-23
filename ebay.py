@@ -35,7 +35,6 @@ class Ebay:
     def parse(self, json_, page):    # format Jason specified in our endpoint. About json decryption/encryption -> https://realpython.com/python-json/
         has_pages = False            # Need Explanation on a whole block parse...
         prices = []
-
         json_ = json.loads(json_.replace('/**/_cb_findItemsByKeywords(', '')[:-1])  # SLIce NOTATION = replaces begining of json text and returns alltext, but the last character ')' - > https://www.oreilly.com/learning/how-do-i-use-the-slice-notation-in-python
         if json_.get('findCompletedItemsResponse'):
             if json_['findCompletedItemsResponse'][0]['ack'][0] == 'Success':

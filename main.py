@@ -74,10 +74,9 @@ if __name__ == '__main__':                   # basically asks 'Is this file is b
 
         ws.append(
             ['Auction Name', 'Auction ID', 'MFG Name', 'MFG Part Number', 'Title', 'UPC',
-             'N of listings', 'Name AVG price by name EBay', 'Name Median  price by name Ebay using high to low sorting',
-             'N of listings', 'UPC Avg price by UPC Ebay', 'UPC Median price by UPC Ebay using  hight to low sorting',
-             'N of listings', 'MFG+PN AVG price by MFG + Part Number Ebay',
-             'MFG+PN Median price by MFG + Part Number Ebay using hight to low sorting'])    # appends top row for more details here: https://medium.com/aubergine-solutions/working-with-excel-sheets-in-python-using-openpyxl-4f9fd32de87f
+             'N', 'Name AVG price by name EBay', 'Name Median  price by name Ebay using high to low sorting',
+             'N', 'MFG AVG price by MFG + Part Number Ebay', 'MFG Median (Median price by MFG + Part Number Ebay using hight to low sorting)',
+             'N', 'UPC AVG price by UPC Ebay', 'UPC Median price by UPC Ebay using  hight to low sorting'])    # appends top row for more details here: https://medium.com/aubergine-solutions/working-with-excel-sheets-in-python-using-openpyxl-4f9fd32de87f
 
         id_ = int(file.replace('.xlsx', ''))                       # to get an Auction ID we Replaces .xlsx with empty and make it integer
         lots = []                                                  # creates empty list lots
@@ -96,15 +95,15 @@ if __name__ == '__main__':                   # basically asks 'Is this file is b
             ws.append([auction_names.get(id_), lot.AuctionID,
                        lot.MFGName, lot.MFGPartNumber, lot.Title, lot.UPC,
                        len(lot.listingsByTitle), avg(lot.listingsByTitle), median(lot.listingsByTitle),
-                       len(lot.listingsByUPC), avg(lot.listingsByUPC), median(lot.listingsByUPC),
-                       len(lot.listingsByMFG), avg(lot.listingsByMFG), median(lot.listingsByMFG)])
+                       len(lot.listingsByMFG), avg(lot.listingsByMFG), median(lot.listingsByMFG),
+                       len(lot.listingsByUPC), avg(lot.listingsByUPC), median(lot.listingsByUPC)])
         index = ws.max_row + 1
         ws[f'H{index}'] = sum([avg(l.listingsByTitle) for l in lots])
         ws[f'I{index}'] = sum([median(l.listingsByTitle) for l in lots])
-        ws[f'K{index}'] = sum([avg(l.listingsByUPC) for l in lots])
-        ws[f'L{index}'] = sum([median(l.listingsByUPC) for l in lots])
-        ws[f'N{index}'] = sum([avg(l.listingsByMFG) for l in lots])
-        ws[f'O{index}'] = sum([median(l.listingsByMFG) for l in lots])
+        ws[f'K{index}'] = sum([avg(l.listingsByMFG) for l in lots])
+        ws[f'L{index}'] = sum([median(l.listingsByMFG) for l in lots])
+        ws[f'N{index}'] = sum([avg(l.listingsByUPC) for l in lots])
+        ws[f'O{index}'] = sum([median(l.listingsByUPC) for l in lots])
         # os.remove(f'{directory}/{file}')
         print('save file')
         wb.save(f'{directory}/{file}')
