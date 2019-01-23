@@ -28,11 +28,11 @@ def get_new_items():                            # Function returns list of colle
     items = []                                  # creates empty list
     losts = soup.find_all('div', class_='truncate-ellipsis')
     for lot in losts:
-        name = lot.span.a.text                   # lot.span.a.text - takes text from class_='truncate-ellipsis'
+        name = lot.span.a.text                   # lot.span.a.text - takes text from class_='truncate-ellipsis' on HTML page
         item = re.search('marketplace_main\.auction&amp;id=(\d+)"', str(lot)) # Auction number from link via RE https://regex101.com/. str(lot) changes object of bs4 lot to str.
         if item:                                 #if item is True ???
             item = int(item.group(1))            # RE function  https://docs.python.org/2/library/re.html
-            auction_names.update({item: name})   # how did we get name ?
+            auction_names.update({item: name})   # how did we get name ? - From name = lot.span.a.text
             print(auction_names)                 # temporary print
             items.append(item)
     return list(set(items))                      # set type onto -> list
@@ -73,12 +73,11 @@ if __name__ == '__main__':                   # basically asks 'Is this file is b
         ws = wb.active                    # Workbook.active() - makes 1st sheet in WB active
 
         ws.append(
-            ['Auction Name', 'Auction ID', 'Lot ID', 'Reference ID', 'MFG Name', 'MFG Part Number', 'Title', 'BBY SKU',
-             'UPC', 'Estimated MSRP', 'N of listings', 'AVG price by name EBay',
-             'Median  price by name Ebay using high to low sorting', 'N of listings', 'Avg price by UPC Ebay',
-             'Median price by UPC Ebay using  hight to low sorting', 'N of listings',
-             'AVG price by MFG + Part Number Ebay',
-             'Median price by MFG + Part Number Ebay using hight to low sorting'])    # appends top row for more details here: https://medium.com/aubergine-solutions/working-with-excel-sheets-in-python-using-openpyxl-4f9fd32de87f
+            ['Auction Name', 'Auction ID', 'MFG Name', 'MFG Part Number', 'Title', 'UPC',
+             'N of listings', 'Name AVG price by name EBay', 'Name Median  price by name Ebay using high to low sorting',
+             'N of listings', 'UPC Avg price by UPC Ebay', 'UPC Median price by UPC Ebay using  hight to low sorting',
+             'N of listings', 'MFG+PN AVG price by MFG + Part Number Ebay',
+             'MFG+PN Median price by MFG + Part Number Ebay using hight to low sorting'])    # appends top row for more details here: https://medium.com/aubergine-solutions/working-with-excel-sheets-in-python-using-openpyxl-4f9fd32de87f
 
         id_ = int(file.replace('.xlsx', ''))                       # to get an Auction ID we Replaces .xlsx with empty and make it integer
         lots = []                                                  # creates empty list lots
@@ -94,19 +93,18 @@ if __name__ == '__main__':                   # basically asks 'Is this file is b
             lot.fill_listings_by_MFG(ebay)
             lot.fill_listings_by_UPC(ebay)
             lots.append(lot)
-            ws.append([auction_names.get(id_), lot.AuctionID, lot.LotID, lot.ReferenceID,
-                       lot.MFGName, lot.MFGPartNumber, lot.Title, lot.BBYSKU,
-                       lot.UPC, lot.EstimatedMSRP,
+            ws.append([auction_names.get(id_), lot.AuctionID,
+                       lot.MFGName, lot.MFGPartNumber, lot.Title, lot.UPC,
                        len(lot.listingsByTitle), avg(lot.listingsByTitle), median(lot.listingsByTitle),
                        len(lot.listingsByUPC), avg(lot.listingsByUPC), median(lot.listingsByUPC),
                        len(lot.listingsByMFG), avg(lot.listingsByMFG), median(lot.listingsByMFG)])
         index = ws.max_row + 1
-        ws[f'L{index}'] = sum([avg(l.listingsByTitle) for l in lots])
-        ws[f'M{index}'] = sum([median(l.listingsByTitle) for l in lots])
-        ws[f'O{index}'] = sum([avg(l.listingsByUPC) for l in lots])
-        ws[f'P{index}'] = sum([median(l.listingsByUPC) for l in lots])
-        ws[f'R{index}'] = sum([avg(l.listingsByMFG) for l in lots])
-        ws[f'S{index}'] = sum([median(l.listingsByMFG) for l in lots])
+        ws[f'H{index}'] = sum([avg(l.listingsByTitle) for l in lots])
+        ws[f'I{index}'] = sum([median(l.listingsByTitle) for l in lots])
+        ws[f'K{index}'] = sum([avg(l.listingsByUPC) for l in lots])
+        ws[f'L{index}'] = sum([median(l.listingsByUPC) for l in lots])
+        ws[f'N{index}'] = sum([avg(l.listingsByMFG) for l in lots])
+        ws[f'O{index}'] = sum([median(l.listingsByMFG) for l in lots])
         # os.remove(f'{directory}/{file}')
         print('save file')
         wb.save(f'{directory}/{file}')
