@@ -3,10 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="96854bac-39e4-4fd0-b307-3224186899c4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TO DO for version 0.2.2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TO DO for version 0.2.2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ebay.py" beforeDir="false" afterPath="$PROJECT_DIR$/ebay.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/consts.py" beforeDir="false" afterPath="$PROJECT_DIR$/consts.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/techliquidators.sqlite" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,11 +20,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="79">
-              <caret line="106" column="42" lean-forward="true" selection-start-line="106" selection-start-column="42" selection-end-line="106" selection-end-column="42" />
-              <folding>
-                <element signature="e#4036#4348#0" />
-              </folding>
+            <state relative-caret-position="420">
+              <caret line="134" column="42" lean-forward="true" selection-start-line="134" selection-start-column="42" selection-end-line="134" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -41,29 +36,12 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ebay.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="38" column="51" selection-start-line="38" selection-start-column="51" selection-end-line="38" selection-end-column="51" />
-              <folding>
-                <element signature="e#0#52#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TO DO for version 0.2.2.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="69">
               <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lot.py">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -82,6 +60,7 @@
       <find>find</find>
       <find>findcomp</find>
       <find>print</find>
+      <find>files</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -132,6 +111,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -142,13 +122,12 @@
             <path>
               <item name="Techliquidators script" type="b2602c69:ProjectViewProjectNode" />
               <item name="Techliquidators script" type="462c0819:PsiDirectoryNode" />
-              <item name="files" type="462c0819:PsiDirectoryNode" />
+              <item name="UNPROCESSED auctions" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -294,7 +273,14 @@
       <option name="project" value="LOCAL" />
       <updated>1548275938211</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="EXCEL updates. Switched columns. changed manes of columns.">
+      <created>1548280376329</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1548280376329</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TodoView">
@@ -308,18 +294,19 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" sideWeight="0.5008183" side_tool="true" weight="0.21651785" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.7824074" visible="true" weight="0.16145833" />
-      <window_info id="Structure" order="2" sideWeight="0.21809745" side_tool="true" weight="0.16145833" />
+      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.782906" visible="true" weight="0.16145833" />
+      <window_info id="Structure" order="2" sideWeight="0.21784233" side_tool="true" weight="0.16145833" />
       <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.49776787" weight="0.408547" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.23883928" side_tool="true" weight="0.6017094" />
-      <window_info anchor="bottom" id="Python Console" order="2" sideWeight="0.49776787" weight="0.26153848" />
+      <window_info anchor="bottom" id="Python Console" order="2" sideWeight="0.49776787" weight="0.37606838" />
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" weight="0.3289689" />
       <window_info anchor="bottom" id="Version Control" order="5" sideWeight="0.4985119" weight="0.85128206" />
-      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.76116073" visible="true" weight="0.26153848" />
-      <window_info anchor="bottom" id="Debug" order="7" sideWeight="0.49925596" weight="0.20949264" />
+      <window_info active="true" anchor="bottom" id="Run" order="6" sideWeight="0.76116073" visible="true" weight="0.051282052" />
+      <window_info anchor="bottom" id="Debug" order="7" sideWeight="0.49925596" weight="0.11282051" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="10" weight="0.29623568" />
@@ -383,7 +370,8 @@
     <MESSAGE value="Comments and line alligning" />
     <MESSAGE value="Aster session with Dima. comments and changes" />
     <MESSAGE value="Aster session with Dima. EXCEL updates &#10;Cut off some columns" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aster session with Dima. EXCEL updates &#10;Cut off some columns" />
+    <MESSAGE value="EXCEL updates. Switched columns. changed manes of columns." />
+    <option name="LAST_COMMIT_MESSAGE" value="EXCEL updates. Switched columns. changed manes of columns." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/techliquidators.sqlite" />
@@ -396,13 +384,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/errors.txt" />
     <entry file="file://$USER_HOME$/Downloads/classes_and_objects.py" />
-    <entry file="file://$PROJECT_DIR$/list of required modules.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/list of required modules.txt" />
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/3/typing.pyi">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -443,13 +425,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py" />
     <entry file="file://$PROJECT_DIR$/database.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="809">
@@ -457,23 +433,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TO DO for version 0.2.2.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lot.py">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-276" />
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ebay.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
+        <state relative-caret-position="89">
           <caret line="38" column="51" selection-start-line="38" selection-start-column="51" selection-end-line="38" selection-end-column="51" />
           <folding>
             <element signature="e#0#52#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/ntpath.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TO DO for version 0.2.2.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -486,11 +478,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="79">
-          <caret line="106" column="42" lean-forward="true" selection-start-line="106" selection-start-column="42" selection-end-line="106" selection-end-column="42" />
-          <folding>
-            <element signature="e#4036#4348#0" />
-          </folding>
+        <state relative-caret-position="420">
+          <caret line="134" column="42" lean-forward="true" selection-start-line="134" selection-start-column="42" selection-end-line="134" selection-end-column="42" />
         </state>
       </provider>
     </entry>

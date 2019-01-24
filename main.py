@@ -76,7 +76,7 @@ if __name__ == '__main__':                   # basically asks 'Is this file is b
             ['Auction Name', 'Auction ID', 'MFG Name', 'MFG Part Number', 'Title', 'UPC',
              'N', 'Name AVG price by name EBay', 'Name Median  price by name Ebay using high to low sorting',
              'N', 'MFG AVG price by MFG + Part Number Ebay', 'MFG Median (Median price by MFG + Part Number Ebay using hight to low sorting)',
-             'N', 'UPC AVG price by UPC Ebay', 'UPC Median price by UPC Ebay using  hight to low sorting'])    # appends top row for more details here: https://medium.com/aubergine-solutions/working-with-excel-sheets-in-python-using-openpyxl-4f9fd32de87f
+             'N', 'UPC AVG price by UPC Ebay', 'UPC Median price by UPC Ebay using  hight to low sorting', ' '])    # appends top row for more details here: https://medium.com/aubergine-solutions/working-with-excel-sheets-in-python-using-openpyxl-4f9fd32de87f
 
         id_ = int(file.replace('.xlsx', ''))                       # to get an Auction ID we Replaces .xlsx with empty and make it integer
         lots = []                                                  # creates empty list lots
@@ -104,12 +104,50 @@ if __name__ == '__main__':                   # basically asks 'Is this file is b
         ws[f'L{index}'] = sum([median(l.listingsByMFG) for l in lots])
         ws[f'N{index}'] = sum([avg(l.listingsByUPC) for l in lots])
         ws[f'O{index}'] = sum([median(l.listingsByUPC) for l in lots])
+
+        index = ws.max_row + 2
+        total_avg_upc = (sum([avg(l.listingsByUPC) for l in lots]) + sum([median(l.listingsByUPC) for l in lots]))/2
+        ws[f'N{index}'] = '30% ROI:'
+        ws[f'O{index}'] = total_avg_upc * 0.77
+        ws[f'P{index}'] = '42% ROI:'
+        ws[f'Q{index}'] = total_avg_upc * 0.7
+
+        index = ws.max_row + 1
+        ws[f'N{index}'] = 'Ebay 0.13 fee'
+        ws[f'O{index}'] = total_avg_upc * 0.13
+        ws[f'Q{index}'] = total_avg_upc * 0.13
+
+        index = ws.max_row + 1
+        ws[f'N{index}'] = 'Shipping'
+        ws[f'O{index}'] = '200'
+        ws[f'Q{index}'] = '200'
+
+        index = ws.max_row + 1
+        ws[f'N{index}'] = 'Earnings'
+        ws[f'O{index}'] = total_avg_upc - (total_avg_upc * 0.77) - (total_avg_upc * 0.13) - 200
+        ws[f'Q{index}'] = total_avg_upc - (total_avg_upc * 0.7) - (total_avg_upc * 0.13) - 200
+
+        index = ws.max_row + 1
+        ws[f'N{index}'] = 'ROI clean'
+        ws[f'O{index}'] = ((total_avg_upc - (total_avg_upc * 0.77) - (total_avg_upc * 0.13) - 200) / total_avg_upc)*100
+        ws[f'Q{index}'] = ((total_avg_upc - (total_avg_upc * 0.7) - (total_avg_upc * 0.13) - 200) / total_avg_upc)*100
+
         # os.remove(f'{directory}/{file}')
-        print('save file')
+        print('save EXCEL file')
         wb.save(f'{directory}/{file}')
+
+        os.chdir(r'D:\Study 2018\Python codes 2\Techliquidators script\files')
+        saved_file = [f for f in os.listdir('.') if os.path.isfile(f)]
+        for f in saved_file:
+            os.rename(f, f'D:/Study 2018/Python codes 2/Techliquidators script/UNPROCESSED auctions/{f}')
+            print(f'file(s): {f} moved to Folder: UNPROCESSED auctions')
+
+
+
+
 
     #
     # temp_wb = load_workbook(BytesIO(r.content))
     # temp_ws = temp_wb.active
     # for row in range(temp_ws.max_row + 1):
-    #     print(temp_ws['A1'].value)
+    #       print(temp_ws['A1'].value)
