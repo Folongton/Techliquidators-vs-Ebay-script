@@ -1,16 +1,16 @@
-import os                   # interaction with OS ( powershell etc.)
-import re                   # regular expressions module
-from openpyxl import load_workbook, Workbook  # Importing Workbook Class and Read(load) existing logbook function from Openpyxl
-from lot import Lot         # From file lot importing Class : Lot
-import requests             # Library for HTML 1.1 requests from servers(websites)
-from ebay import Ebay       # From file ebay import class Ebay
-from consts import cat_url, directory, download_url # From file consts import variables ( Do we have to pull variables from the same project files?)
-from database import Database   # From file database import Class Database
-from helper import avg, median  # From file helper import Functions median and avg ( median formula questions ?)
-from bs4 import BeautifulSoup   # Beautiful Soup is a Python library for pulling data out of HTML and XML files (why bs4 not BeautifulSoup?) Need more info on it.
+import os                   
+import re                   
+from openpyxl import load_workbook, Workbook 
+from lot import Lot         
+import requests             
+from ebay import Ebay       
+from consts import cat_url, directory, download_url 
+from database import Database   
+from helper import avg, median  
+from bs4 import BeautifulSoup   
 
 
-auction_names = {} # Assigning Empty global variable as dictionary
+auction_names = {} 
 
 
 def get_existed_items(db):
@@ -19,74 +19,73 @@ def get_existed_items(db):
         items.append(int(item[0]))
     return items
     '''
-   return [int(item[0]) for item in db.get('items', 'id')]   # function returns all items in DB. List . Refactoring (avoiding for loops) https://medium.com/python-pandemonium/never-write-for-loops-again-91a5a4c84baf
+   return [int(item[0]) for item in db.get('items', 'id')]   
 
 
-def get_new_items():                            # Function returns list of collected Auction ID's into items and adds ID:Title into auction_names dictionary
-    html = requests.get(cat_url).text           # why .text ? -> It automatically decodes returned data to text format or it returns only TEXT part of request ???  - ALL HTML
-    soup = BeautifulSoup(html, 'html.parser')   # standart soup object  https://www.youtube.com/watch?v=aIPqt-OdmS0
-    items = []                                  # creates empty list
+def get_new_items():                            
+    html = requests.get(cat_url).text          
+    soup = BeautifulSoup(html, 'html.parser')   
+    items = []                                  
     losts = soup.find_all('div', class_='truncate-ellipsis')
     for lot in losts:
-        name = lot.span.a.text                   # lot.span.a.text - takes text from class_='truncate-ellipsis' on HTML page
-        item = re.search('marketplace_main\.auction&amp;id=(\d+)"', str(lot)) # Auction number from link via RE https://regex101.com/. str(lot) changes object of bs4 lot to str.
-        if item:                                 #if item is True ???
-            item = int(item.group(1))            # RE function  https://docs.python.org/2/library/re.html
-            auction_names.update({item: name})   # how did we get name ? - From name = lot.span.a.text
-            print(auction_names)                 # temporary print
+        name = lot.span.a.text                   
+        item = re.search('marketplace_main\.auction&amp;id=(\d+)"', str(lot)) 
+        if item:                                 
+            item = int(item.group(1))            
+            auction_names.update({item: name})   
+            print(auction_names)                
             items.append(item)
-    return list(set(items))                      # set type onto -> list
+    return list(set(items))                     
 
 
 def save_file(name, content):
-    if not os.path.exists(directory):           # what if not ??? - False ?
-        os.makedirs(directory)                  # why makedirs, not mkdir ?  Creates directory
+    if not os.path.exists(directory):           
+        os.makedirs(directory)                  
     if not os.path.exists(f'{directory}/{name}.xlsx'):
         open(f'{directory}/{name}.xlsx', 'wb').write(content)
 
 
-if __name__ == '__main__':                   # basically asks 'Is this file is being run directly from Python or it is being imported?' if yes... SO, if for any reason we will run this project from other file(module) this 'if' block will not execute. ----
-                                             #https: // www.youtube.com / watch?v = sugvnHA7ElY & vl = en
-    db = Database('techliquidators.sqlite')  # Create object db  - as in Database class def__init__
+if __name__ == '__main__':                   
+                                             
+    db = Database('techliquidators.sqlite')  
 
     existed_items = get_existed_items(db)
     new_items = get_new_items()
-    new_items = [item for item in new_items if item not in existed_items]   # List. Refactoring (avoiding for loops) https://medium.com/python-pandemonium/never-write-for-loops-again-91a5a4c84baf
+    new_items = [item for item in new_items if item not in existed_items]   
 
     # temp = []
     # for item in new_items:
     #     if item not in existed_items:
     #         temp.append(item)
 
-    db.insert_many('items', new_items)      # Function from Database Class: inserts list of new auctions IDs into DB
+    db.insert_many('items', new_items)      
     db.close()
 
-    ebay = Ebay('VasylZhe-TechPric-PRD-2393f3dea-5cde0afe')     # Ebay class object as in __init__ Ebay
+    ebay = Ebay('VasylZhe-TechPric-PRD-2393f3dea-5cde0afe')     
 
     for itemID in new_items:
         if not os.path.exists(f'{directory}/{itemID}.xlsx'):
-            r = requests.post(download_url, {'auctionID': itemID})  # How did you figure out we can make post with data as :{'auctionID': itemID} ???
-            save_file(itemID, r.content)                           # r.content - content of response in bytes
+            r = requests.post(download_url, {'auctionID': itemID})  
+            save_file(itemID, r.content)                           
 
-    for file in os.listdir(directory):    # for loop going over all files in given directory
-        wb = Workbook()                   # creates workbook. standard openpyxl module object. GREAT EXAMPLES HERE: -> https://medium.com/aubergine-solutions/working-with-excel-sheets-in-python-using-openpyxl-4f9fd32de87f
-        ws = wb.active                    # Workbook.active() - makes 1st sheet in WB active
-
+    for file in os.listdir(directory):    
+        wb = Workbook()                   
+        ws = wb.active                    
         ws.append(
             ['Auction Name', 'Auction ID', 'MFG Name', 'MFG Part Number', 'Title', 'UPC',
              'N', 'Name AVG price by name EBay', 'Name Median  price by name Ebay using high to low sorting',
              'N', 'MFG AVG price by MFG + Part Number Ebay', 'MFG Median (Median price by MFG + Part Number Ebay using hight to low sorting)',
              'N', 'UPC AVG price by UPC Ebay', 'UPC Median price by UPC Ebay using  hight to low sorting', ' '])    # appends top row for more details here: https://medium.com/aubergine-solutions/working-with-excel-sheets-in-python-using-openpyxl-4f9fd32de87f
 
-        id_ = int(file.replace('.xlsx', ''))                       # to get an Auction ID we Replaces .xlsx with empty and make it integer
-        lots = []                                                  # creates empty list lots
-        temp_wb = load_workbook(f'{directory}/{file}')             # load_workbook opens every file in a given directory
-        temp_ws = temp_wb.active                                   # .active makes 1st WS active
-        for row in range(2, temp_ws.max_row + 1):                  # Iterates thru all rows with data. 2 - because we have 1st row with our columns names appended earlier
-            values = []                                            # creates empty value list
-            for column in range(1, temp_ws.max_column + 1):        # iterates thru all columns with data starting with 1st.
-                cell_obj = temp_ws.cell(row=row, column=column)    # Assigns cell values to Cell_obj
-                values.append(cell_obj.value)                      # Appends values to values list .value function from Openpyxl which gets or set value held in a cell.
+        id_ = int(file.replace('.xlsx', ''))                       
+        lots = []                                              
+        temp_wb = load_workbook(f'{directory}/{file}')           
+        temp_ws = temp_wb.active                               
+        for row in range(2, temp_ws.max_row + 1):                
+            values = []                                            
+            for column in range(1, temp_ws.max_column + 1):        
+                cell_obj = temp_ws.cell(row=row, column=column)    
+                values.append(cell_obj.value)                      
             lot = Lot(List=values)
             lot.fill_listings_by_Title(ebay)
             lot.fill_listings_by_MFG(ebay)
@@ -146,7 +145,7 @@ if __name__ == '__main__':                   # basically asks 'Is this file is b
 
 
 
-    #
+   
     # temp_wb = load_workbook(BytesIO(r.content))
     # temp_ws = temp_wb.active
     # for row in range(temp_ws.max_row + 1):
