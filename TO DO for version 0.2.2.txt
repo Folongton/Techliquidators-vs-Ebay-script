@@ -1,6 +1,0 @@
-1. Delete cache files OR RECORDS OLDER in 15 days
-2. Move Excel files to  different folder 'UNPROCESSED auctions'
-3. Formating table (creating final column with the most data) : if Number UPC listings = 0 use Part number data or Name for calculations.
-3.5 Add sum multiplied by 0.7 (42% ROI with no shipping and ebay fees(avg sum of prices on a market*0.13)) and by 0.77(30% ROI with no shipping and ebay fees)
-4. Delete columns which I don't use
-5. WRITE MINI SCRIPT FOR AVG/MEDIAN PRICES FOR CUSTOM REQUEST ( IF i NEED TO RUN AN ITEM BYMYSELF USING MANUAL INPUT)
