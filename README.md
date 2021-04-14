@@ -22,4 +22,4 @@ Work was done by me alone.
 3. Multithreading
 4. Proper OOP strucure ( 5+ files, 5 classes, 50+ functions)
 5. Queue + recursion for robustness.
-6. Propper logger implementation for quick debuging. 
+6. Logger implementation for quick debuging. 
