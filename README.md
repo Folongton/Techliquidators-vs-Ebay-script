@@ -14,7 +14,7 @@ Implementation : Scrape lot related data from wholesaler website. Analyze items 
 5. json - for handling API responses
 
 Goal : find better prices for product sourcing. 
-Work was done by me alone.
+
 ##### Technics and modules used :
 1. Scraping data from heavy JS website usind headles chrome on selenium.
 2. Storing and updating data in Excal via openpyxl. 
