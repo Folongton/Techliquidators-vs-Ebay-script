@@ -1,6 +1,5 @@
 # Techliquidators-script
-My first Python automation project completed with help of friend of mine as I was learning Python and general modules.
-This project helped us with decision making regarding betting prices on wholesale auctions for one of my ventures.
+This project helped us with decision-making regarding betting prices on wholesale auctions for one of my ventures.
 Completed in 2019.
 
 Business Goal : Analyze data from wholesale website and Ebay to determine maximum price we can pay for a lot with a given profitability expectation. 
